@@ -6,7 +6,10 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -36,3 +39,65 @@ main {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+article {
+  width: 80%;
+  margin: 50px 0px;
+  display: flex;
+  border: 4px solid #545149;
+  flex-direction: column;
+  padding: 20px;
+  transition: box-shadow 0.3s;
+}
+
+article:hover {
+  box-shadow: 5px 5px 5px rgb(100, 100, 255); 
+}
+
+.avatarName {
+  display: flex;
+  margin: 0%;
+  align-items: center;
+}
+
+.username {
+  margin: 0%;
+}
+
+.avatar {
+  margin-right: 20px;
+  height: 50px;
+}
+
+article header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+
+}
+
+.handle {
+  color: lightgrey;
+  margin-top: 0%;
+}
+
+.tweet {
+  margin: 10px 10px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 4px solid #545149;
+  font-size: medium;
+}
+
+.tweet-icons {
+  margin-top: 10px;
+  color: #4056A1;
+}
+
+.icon:hover {
+  color: orange;
+  cursor: pointer;
+}
