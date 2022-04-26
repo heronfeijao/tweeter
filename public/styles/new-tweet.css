@@ -1,9 +1,9 @@
 .new-tweet {
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 80%;
-  /* align-items: center; */
 }
 
 .tweetbtn {
