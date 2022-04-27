@@ -7,6 +7,17 @@
 
 $(document).ready(() => {
 
+  $newTweet = $('.new-tweet');
+  $($newTweet).hide();
+
+  $('.newtweet').click(function (e) {
+    e.preventDefault();
+    $newTweet.slideToggle();
+    $('.tweetform').select();
+  });
+
+
+  // -- RENDER OF DATABASE TWEETS --
   $.ajax({
     type: "GET",
     url: "/tweets",
@@ -14,18 +25,25 @@ $(document).ready(() => {
     renderTweets(res);
   });
 
+  // -- CREATE TWEET ARTICLE --
+  const noHacking = (str) => {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = (tweet) => {
     let $tweet =
       `<article>
       <header>
         <div class="avatarName">
-        <img class ="avatar" src="${tweet.user.avatars}" alt="avatar">
-        <p class="username">${tweet.user.name}</p>
+        <img class ="avatar" src="${noHacking(tweet.user.avatars)}" alt="avatar">
+        <p class="username">${noHacking(tweet.user.name)}</p>
         </div>
-        <h4 class="handle">${tweet.user.handle}</h3>
+        <h4 class="handle">${noHacking(tweet.user.handle)}</h3>
       </header>
       <div class="tweet">
-        <p>${tweet.content.text}</p>
+        <p>${noHacking(tweet.content.text)}</p>
       </div>
       <footer>
         <p>${timeago.format(tweet.created_at)}</p>
@@ -39,16 +57,19 @@ $(document).ready(() => {
     return $tweet;
   };
 
+  // -- RENDER DATABASE TWEETS --
   const renderTweets = (tweets) => {
     for (const t of tweets) {
       $('#tweets-container').prepend(createTweetElement(t));
     }
   };
 
+  // -- RENDER THE LAST POSTED TWEET --
   const renderLastTweet = (tweet) => {
     $('#tweets-container').prepend(createTweetElement(tweet));
   };
 
+  // -- AJAX REQ FOR RENDERING LAST TWEET --
   const lastTweet = () => {
     $.ajax({
       type: "GET",
@@ -60,18 +81,30 @@ $(document).ready(() => {
       });
   };
 
-  $('form').submit(function(e) {
+  // -- TWEET SUBMIT REQUEST --
+  $('form').submit(function (e) {
     e.preventDefault();
     const data = $(this).serialize();
     const counterLength = $('.counter').val();
+    const $error = $('.err');
 
     if (counterLength < 0) {
-      alert('Your message cannot have more than 140 characters.');
+      $error.text('Your message cannot have more than 140 characters.');
+      $error.addClass('error');
+      $error.slideDown();
+      setTimeout(() => {
+        $error.slideUp();
+      }, 5000);
       return;
     }
 
     if (data === "text=") {
-      alert('Your message cannot be empty');
+      $error.text('Your message cannot be empty');
+      $error.addClass('error');
+      $error.slideDown();
+      setTimeout(() => {
+        $error.slideUp();
+      }, 5000);
       return;
     }
 
@@ -79,7 +112,7 @@ $(document).ready(() => {
       type: "POST",
       url: "/tweets",
       data: data
-    }) .then(() => {
+    }).then(() => {
       lastTweet();
     });
 
