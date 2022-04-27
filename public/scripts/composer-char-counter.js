@@ -6,10 +6,10 @@ $(document).ready(function () {
     counter.val(() => {
       const count = 140;
       if (count - text < 0) {
-        $(counter).css("color", "red");
+        $(counter).addClass("count-red");
       }
       if (count - text >= 0) {
-        $(counter).css("color", "");
+        $(counter).removeClass("count-red");
       }
       return count - text;
     });
