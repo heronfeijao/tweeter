@@ -7,12 +7,12 @@
 
 $(document).ready(() => {
 
-  const getDaysAgo = (time) => {
-    const today = new Date();
-    const pastDay = new Date(time);
-    const timeDays = Math.round((today - pastDay) / 86400000);
-    return timeDays;
-  };
+  $.ajax({
+    type: "GET",
+    url: "/tweets",
+  }).then((res) => {
+    renderTweets(res);
+  });
 
   const createTweetElement = (tweet) => {
     let $tweet =
@@ -41,38 +41,49 @@ $(document).ready(() => {
 
   const renderTweets = (tweets) => {
     for (const t of tweets) {
-      $('#tweets-container').append(createTweetElement(t));
+      $('#tweets-container').prepend(createTweetElement(t));
     }
   };
 
-  $('.load-tweets').on('click', function () {
-    $.ajax('/tweets', {
-      type: 'GET',
-      url: "/tweets"
+  const renderLastTweet = (tweet) => {
+    $('#tweets-container').prepend(createTweetElement(tweet));
+  };
+
+  const lastTweet = () => {
+    $.ajax({
+      type: "GET",
+      url: "/tweets",
     })
       .then((res) => {
-        renderTweets(res);
+        const lastTweet = res[res.length - 1];
+        return renderLastTweet(lastTweet);
       });
-  });
+  };
 
   $('form').submit(function(e) {
     e.preventDefault();
     const data = $(this).serialize();
-    
-    if (data.length > 145) {
+    const counterLength = $('.counter').val();
+
+    if (counterLength < 0) {
       alert('Your message cannot have more than 140 characters.');
+      return;
     }
-    if (data.length === 0) {
+
+    if (data === "text=") {
       alert('Your message cannot be empty');
+      return;
     }
 
     $.ajax({
       type: "POST",
       url: "/tweets",
       data: data
-    })
-      .then((res) => console.log(res));
+    }) .then(() => {
+      lastTweet();
+    });
 
+    $('form').trigger("reset");
   });
 
 });

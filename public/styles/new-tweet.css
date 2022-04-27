@@ -12,6 +12,12 @@
   padding: 6px 10px;
   color: #FFFFFF;
   border: none;
+  transition: box-shadow 0.3s;
+}
+
+.tweetbtn:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 10px #4056A1;
 }
 
 .separate {

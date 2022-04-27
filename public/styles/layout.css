@@ -44,9 +44,10 @@ main {
    margin-bottom: 30px;
  }
 
- .tweets-container {
+ #tweets-container {
    display: flex;
    flex-direction: column;
+   width: 80%;
  }
 
 article {
@@ -60,7 +61,7 @@ article {
 }
 
 article:hover {
-  box-shadow: 5px 5px 5px rgb(100, 100, 255); 
+  box-shadow: 5px 5px 5px rgb(100, 100, 255);
 }
 
 .avatarName {
@@ -82,7 +83,6 @@ article header {
   display: flex;
   width: 100%;
   justify-content: space-between;
-
 }
 
 .handle {
@@ -92,6 +92,7 @@ article header {
 
 .tweet {
   margin: 10px 10px;
+  overflow-wrap: anywhere;
 }
 
 footer {
