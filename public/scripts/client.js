@@ -20,7 +20,7 @@ $(document).ready(() => {
   $newTweet = $('.new-tweet');
   $($newTweet).hide();
 
-  $('.nav-newtweet').click(function(e) {
+  $('.nav-newtweet').click(function (e) {
     e.preventDefault();
     $newTweet.slideToggle();
     $('.tweetform').select();
@@ -127,6 +127,12 @@ $(document).ready(() => {
     });
 
     $('form').trigger("reset");
+  });
+
+  // -- AUTO-ADJUSTMENT OF FORM --
+  $(".tweetform").on("input", function() {
+    this.style.height = "auto";
+    this.style.height = (this.scrollHeight) + 4 + "px";
   });
 
 });

@@ -28,14 +28,14 @@
 
 .tweetform {
   border: none;
-  font-size: 16px;
+  font-size: 1rem;
   border-bottom: 4px solid #545149;
   background-color: #e4e4e4;
   width: 100%;
   outline: none;
-  max-height: 150px;
-  overflow-y: auto;
-  min-height: 17px;
+  overflow-y: hidden;
+  resize: none;
+  font-weight: bold;
 }
 
 textarea::placeholder {
