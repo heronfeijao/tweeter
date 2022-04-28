@@ -16,3 +16,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Photos
+
+!["Screenshot of Desktop Mode"](./docs/desktop.png)
+!["Screenshot of Mobile Mode"](./docs/mobile.png)
+!["Screenshot of Tweets"](./docs/tweets.png)

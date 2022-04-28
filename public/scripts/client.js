@@ -20,7 +20,7 @@ $(document).ready(() => {
   $newTweet = $('.new-tweet');
   $($newTweet).hide();
 
-  $('.nav-newtweet').click(function (e) {
+  $('.nav-newtweet').click(function(e) {
     e.preventDefault();
     $newTweet.slideToggle();
     $('.tweetform').select();
@@ -92,7 +92,7 @@ $(document).ready(() => {
   };
 
   // -- TWEET SUBMIT REQUEST --
-  $('form').submit(function (e) {
+  $('form').submit(function(e) {
     e.preventDefault();
     const data = $(this).serialize();
     const counterLength = $('.counter').val();
