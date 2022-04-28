@@ -22,7 +22,6 @@ body {
   background-color: #e4e4e4;
   font-size: 24px;
   font-family: 'Source Sans Pro', sans-serif;
-  display: flex;
   flex-direction: column;
 }
 

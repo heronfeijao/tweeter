@@ -38,65 +38,74 @@
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
-    <span>tweeter</span>
-    <div class="nav-newtweet">
-      <p class="nav-newtweet2"><b>Write</b> a new tweet</p>
-      <i class="fa-solid fa-angles-down navarrow"></i>
+    <div class="nav1">
+      <span>tweeter</span>
+      <div class="nav-newtweet">
+        <p class="nav-newtweet2"><b>Write</b> a new tweet</p>
+        <i class="fa-solid fa-angles-down navarrow"></i>
+      </div>
     </div>
   </nav>
-  <header class="profile">
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div>
-      <h2>User </h2>
-    </div>
-  </header>
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <form action="/tweets" method="POST">
-        <label for="tweet-text"><b>What are you humming about?</b></label>
-        <textarea class="tweetform" name="text" id="tweet-text"></textarea>
-        <div class="separate">
-          <button class="tweetbtn" type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
+  <div class="main-body">
+    <header class="profile">
+      <div class="nav2">
+        <span>tweeter</span>
+        <div class="nav-newtweet">
+          <p class="nav-newtweet2"><b>Write</b> a new tweet</p>
+          <i class="fa-solid fa-angles-down navarrow"></i>
         </div>
-        <div class="err"></div>
-      </form>
-    </section>
+      </div>
+      <div class="user-profile">
+        <img src="/images/profile-hex.png">
+        <h2 class="username">User</h2>
+      </div>
+    </header>
 
-    <section id="tweets-container">
-
-      <!-- Initial tweet -->
-      <article>
-        <header>
-          <div class="avatarName">
-            <img class="avatar" src="https://avatarfiles.alphacoders.com/700/70031.gif" alt="avatar">
-            <p class="username">Joker</p>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <form action="/tweets" method="POST">
+          <label for="tweet-text"><b>What are you humming about?</b></label>
+          <textarea class="tweetform" name="text" id="tweet-text"></textarea>
+          <div class="separate">
+            <button class="tweetbtn" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
-          <h4 class="handle">@ClownPrinceOfCrime</h3>
-        </header>
-        <div class="tweet">
-          <p>If you're good at something, never do it for free.</p>
-        </div>
-        <footer>
-          <p>10 days ago</p>
-          <div class="tweet-icons">
-            <i class="fa-solid fa-flag icon"></i>
-            <i class="fa-solid fa-retweet icon"></i>
-            <i class="fa-solid fa-heart icon"></i>
+          <div class="err"></div>
+        </form>
+      </section>
+
+      <section id="tweets-container">
+
+        <!-- Initial tweet -->
+        <article>
+          <header>
+            <div class="avatarName">
+              <img class="avatar" src="https://avatarfiles.alphacoders.com/700/70031.gif" alt="avatar">
+              <p class="username">Joker</p>
+            </div>
+            <h4 class="handle">@ClownPrinceOfCrime</h3>
+          </header>
+          <div class="tweet">
+            <p>If you're good at something, never do it for free.</p>
           </div>
-        </footer>
-      </article>
-    </section>
+          <footer>
+            <p>10 days ago</p>
+            <div class="tweet-icons">
+              <i class="fa-solid fa-flag icon"></i>
+              <i class="fa-solid fa-retweet icon"></i>
+              <i class="fa-solid fa-heart icon"></i>
+            </div>
+          </footer>
+        </article>
+      </section>
 
-    <!-- Scroll top arrow -->
-    <i id="scroll-top" class="fa-solid fa-angles-up"></i>
+      <!-- Scroll top arrow -->
+      <i id="scroll-top" class="fa-solid fa-angles-up"></i>
 
-  </main>
+    </main>
+  </div>
 </body>
 
 </html>
