@@ -33,4 +33,12 @@
   background-color: #e4e4e4;
   width: 100%;
   outline: none;
+  max-height: 150px;
+  overflow-y: auto;
+  min-height: 17px;
+}
+
+textarea::placeholder {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
 }
