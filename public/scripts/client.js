@@ -7,6 +7,7 @@
 
 $(document).ready(() => {
 
+  // -- SCROLL TOP FUNCTION --
   $('#scroll-top').hide();
 
   $('#scroll-top').click(() => {
@@ -15,6 +16,7 @@ $(document).ready(() => {
     $('.tweetform').select();
   });
 
+  // -- NAV NEW TWEET --
   $newTweet = $('.new-tweet');
   $($newTweet).hide();
 
@@ -54,7 +56,7 @@ $(document).ready(() => {
         <p>${noHacking(tweet.content.text)}</p>
       </div>
       <footer>
-        <p>${timeago.format(tweet.created_at)}</p>
+        <p>${noHacking(timeago.format(tweet.created_at))}</p>
         <div class="tweet-icons">
           <i class="fa-solid fa-flag icon"></i>
           <i class="fa-solid fa-retweet icon"></i>

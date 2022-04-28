@@ -30,8 +30,7 @@ nav span {
 
 .navarrow {
   color: red;
-  -webkit-animation: mover 0.7s infinite  alternate;
-  animation: mover 0.7s infinite  alternate;
+  animation: mover 0.5s infinite  alternate;
 }
 
 .nav-newtweet:hover {
@@ -40,5 +39,5 @@ nav span {
 
 @keyframes mover {
   0% { transform: translateY(-5px); }
-  100% { transform: translateY(0px); }
+  100% { transform: translateY(5px); }
 }
