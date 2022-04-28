@@ -47,6 +47,10 @@ header.profile {
   .main-body {
     flex-direction: column;
   }
+
+  .handle {
+    font-size: 3vw
+  }
 }
 
 /* DESKTOP DISPLAY */
@@ -60,11 +64,12 @@ header.profile {
   }
 
   header.profile {
-    width: 25%;
+    width: fit-content;
+    height: fit-content;
     margin: auto;
     position: fixed;
     top: 25%;
-    height: 35%;
+    padding: 1%;
     margin-left: 5%;
   }
 
