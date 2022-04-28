@@ -16,7 +16,7 @@ nav span {
   font-family: "Bungee";
 }
 
-.newtweet {
+.nav-newtweet {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,7 @@ nav span {
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.newtweet2 {
+.nav-newtweet2 {
   margin: 0%;
 }
 
@@ -34,7 +34,7 @@ nav span {
   animation: mover 0.7s infinite  alternate;
 }
 
-.newtweet:hover {
+.nav-newtweet:hover {
   cursor: pointer;
 }
 

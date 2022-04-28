@@ -24,8 +24,6 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 main {
@@ -126,4 +124,21 @@ footer {
   color: #D8000C;
   background-color: #FFBABA;
   background-image: url('https://i.imgur.com/GnyDvKN.png');
+}
+
+#scroll-top {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  cursor: pointer;
+  margin: 0 10px 10px 0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #4056A1;
 }

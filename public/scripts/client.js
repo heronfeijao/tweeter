@@ -7,10 +7,18 @@
 
 $(document).ready(() => {
 
+  $('#scroll-top').hide();
+
+  $('#scroll-top').click(() => {
+    $(document).scrollTop(0);
+    $('.new-tweet').slideDown();
+    $('.tweetform').select();
+  });
+
   $newTweet = $('.new-tweet');
   $($newTweet).hide();
 
-  $('.newtweet').click(function (e) {
+  $('.nav-newtweet').click(function(e) {
     e.preventDefault();
     $newTweet.slideToggle();
     $('.tweetform').select();
